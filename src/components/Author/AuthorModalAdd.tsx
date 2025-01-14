@@ -3,19 +3,14 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { TextField } from "../TextField";
 import * as Yup from "yup";
+import { AuthorModalAddProps } from "../../types/types";
 
-// Esquema de validação com Yup
 const validationSchema = Yup.object({
   name: Yup.string().required("O nome é obrigatório"),
   email: Yup.string()
     .email("E-mail inválido")
     .required("O e-mail é obrigatório"),
 });
-
-// Tipagem das props
-interface AuthorModalAddProps {
-  onSubmit: (values: { name: string; email: string }) => void;
-}
 
 export function AuthorModalAdd({ onSubmit }: AuthorModalAddProps) {
   const {

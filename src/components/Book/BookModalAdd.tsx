@@ -9,8 +9,8 @@ import {
   StyledFlex,
   ButtonGroup,
 } from "./styles";
+import { BookModalAddProps } from "../../types/types";
 
-// Esquema de validação com Yup
 const validationSchema = Yup.object({
   name: Yup.string().required("O nome é obrigatório"),
   author: Yup.string().required("O autor é obrigatório"),
@@ -19,10 +19,6 @@ const validationSchema = Yup.object({
     .positive("Número de páginas deve ser positivo")
     .required("O número de páginas é obrigatório"),
 });
-
-interface BookModalAddProps {
-  onSubmit: (data: { name: string; author: string; pages: number }) => void;
-}
 
 export function BookModalAdd({ onSubmit }: BookModalAddProps) {
   const {

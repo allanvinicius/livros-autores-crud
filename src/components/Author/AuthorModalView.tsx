@@ -4,7 +4,6 @@ import { AuthorModalViewProps } from "../../types/types";
 import { DetailButton } from "./styles";
 
 export function AuthorModalView({ books, val }: AuthorModalViewProps) {
-  // Filtra os livros que pertencem ao autor com base no id
   const authorBooks = books.filter((book) => book.author_id === val.id);
 
   return (
@@ -33,7 +32,7 @@ export function AuthorModalView({ books, val }: AuthorModalViewProps) {
                 </Table.ColumnHeaderCell>
               </Table.Row>
             </Table.Header>
-            {/* Exibe os livros do autor */}
+
             {authorBooks.length > 0 ? (
               authorBooks.map((book) => (
                 <Table.Row align={"center"} key={book.id}>

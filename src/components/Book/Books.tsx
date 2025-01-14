@@ -1,4 +1,4 @@
-import { useEffect, useCallback } from "react";
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { Container, Table } from "@radix-ui/themes";
 import { BookAlertDelete } from "./BookAlertDelete";
@@ -66,21 +66,18 @@ export function Books({ books, setBooks, setAuthors, authors }: BooksProps) {
 
   useEffect(() => {
     localStorage.setItem("books", JSON.stringify(books));
-    localStorage.setItem("authors", JSON.stringify(authors));
-  }, [books, authors]);
+  }, [books]);
 
-  const handleDelete = useCallback(
-    (id: number) => {
-      setBooks((prevBooks) => prevBooks.filter((book) => book.id !== id));
-    },
-    [setBooks]
-  );
+  const handleDelete = (id: number) => {
+    const updatedBooks = books.filter((book) => book.id !== id);
+    setBooks(updatedBooks);
+  };
 
   return (
     <Container>
       <TableContainer>
         <Table.Root variant="surface" style={{ width: "100%" }}>
-          <Table.Header style={{width: "70%"}}>
+          <Table.Header style={{ width: "70%" }}>
             <Table.Row>
               <Table.ColumnHeaderCell>ID</Table.ColumnHeaderCell>
               <Table.ColumnHeaderCell>Livro</Table.ColumnHeaderCell>

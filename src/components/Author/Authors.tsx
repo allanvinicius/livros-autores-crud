@@ -27,10 +27,7 @@ export function Authors({ books, authors, setAuthors }: AuthorsProps) {
       return;
     }
 
-    const nextId =
-      authors.length > 0
-        ? Math.max(...authors.map((item) => Number(item.id)), 0) + 1
-        : 1;
+    const nextId = Math.max(...authors.map((item) => Number(item.id)), 0) + 1;
 
     const updatedAuthors = [
       ...authors,

@@ -13,7 +13,7 @@ export function BookModalView({ val }: BookModalViewProps) {
       </Dialog.Trigger>
       <StyledDialogContent>
         <Dialog.Title>{val.name}</Dialog.Title>
-        <Dialog.Description>Autor: {val.author ?? "N/A"}</Dialog.Description>
+        
 
         <Inset side="x" my="5">
           <Table.Root>

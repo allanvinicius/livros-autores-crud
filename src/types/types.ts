@@ -2,7 +2,6 @@ export interface AuthorAlertDeleteProps {
   handleDelete: (id: number) => void;
   id: number;
 }
-
 export interface Book {
   id: number;
   name: string;
@@ -35,15 +34,18 @@ export interface BooksProps {
 }
 
 export interface BookModalViewProps {
-  val: {
-    id: number;
-    name: string;
-    author: string;
-    pages: number;
-  };
+  val: Book;
 }
 
 export interface BookAlertDeleteProps {
   handleDelete: (id: number) => void;
   id: number;
+}
+
+export interface BookModalAddProps {
+  onSubmit: (data: { name: string; author: string; pages: number }) => void;
+}
+
+export interface AuthorModalAddProps {
+  onSubmit: (values: { name: string; email: string }) => void;
 }
