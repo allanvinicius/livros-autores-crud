@@ -1,38 +1,39 @@
-import { AlertDialog, Button } from "@radix-ui/themes";
+import { Flex, AlertDialog, Button } from "@radix-ui/themes";
 import { TrashIcon } from "@radix-ui/react-icons";
-import { DeleteButton, DialogContent, StyledFlex } from "./styles";
-import { BookAlertDeleteProps } from "../../types/types";
+import { BookDeleteProps } from "../../types/types";
+import { useLibrary } from "../../hooks/useLibrary";
 
-export function BookAlertDelete({ handleDelete, id }: BookAlertDeleteProps) {
+export function BookDelete({ id }: BookDeleteProps) {
+  const { deleteBook } = useLibrary();
+
   return (
     <AlertDialog.Root>
       <AlertDialog.Trigger>
-        <DeleteButton>
+        <Button color="red">
           <TrashIcon />
-        </DeleteButton>
+        </Button>
       </AlertDialog.Trigger>
-      <DialogContent>
+
+      <AlertDialog.Content style={{ maxWidth: 450 }}>
         <AlertDialog.Title>Apagar Livro</AlertDialog.Title>
         <AlertDialog.Description size="2">
           Você tem certeza? Esse livro será removido.
         </AlertDialog.Description>
-        <StyledFlex>
+
+        <Flex gap="3" mt="4" justify="end">
           <AlertDialog.Cancel>
             <Button variant="soft" color="gray">
               Cancelar
             </Button>
           </AlertDialog.Cancel>
+          
           <AlertDialog.Action>
-            <Button
-              variant="solid"
-              color="red"
-              onClick={() => handleDelete(id)}
-            >
+            <Button variant="solid" color="red" onClick={() => deleteBook(id)}>
               Remover
             </Button>
           </AlertDialog.Action>
-        </StyledFlex>
-      </DialogContent>
+        </Flex>
+      </AlertDialog.Content>
     </AlertDialog.Root>
   );
 }

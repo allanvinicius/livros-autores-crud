@@ -1,19 +1,26 @@
-import { Button, Dialog, Table, Inset } from "@radix-ui/themes";
+import { Dialog, Button, Flex, Table, Inset } from "@radix-ui/themes";
 import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
-import { StyledDialogContent, ButtonGroup, DetailButton } from "./styles";
-import { BookModalViewProps } from "../../types/types";
+import { BookDetailProps } from "../../types/types";
+import { useLibrary } from "../../hooks/useLibrary";
 
-export function BookModalView({ val }: BookModalViewProps) {
+export function BookDetail({ detailsBook }: BookDetailProps) {
+  const { authors } = useLibrary();
+
+  const author = authors.find((author) => author.id === detailsBook.author_id);
+
   return (
     <Dialog.Root>
       <Dialog.Trigger>
-        <DetailButton>
+        <Button>
           <MagnifyingGlassIcon />
-        </DetailButton>
+        </Button>
       </Dialog.Trigger>
-      <StyledDialogContent>
-        <Dialog.Title>{val.name}</Dialog.Title>
-        
+
+      <Dialog.Content>
+        <Dialog.Title>{detailsBook.name}</Dialog.Title>
+        <Dialog.Description>
+          Autor: {author ? author.name : "Desconhecido"}
+        </Dialog.Description>
 
         <Inset side="x" my="5">
           <Table.Root>
@@ -24,25 +31,24 @@ export function BookModalView({ val }: BookModalViewProps) {
                 <Table.ColumnHeaderCell>Páginas</Table.ColumnHeaderCell>
               </Table.Row>
             </Table.Header>
-
             <Table.Body>
               <Table.Row>
-                <Table.RowHeaderCell>{val.id}</Table.RowHeaderCell>
-                <Table.Cell>{val.name}</Table.Cell>
-                <Table.Cell>{val.pages ?? "N/A"}</Table.Cell>
+                <Table.Cell>{detailsBook.id}</Table.Cell>
+                <Table.Cell>{detailsBook.name}</Table.Cell>
+                <Table.Cell>{detailsBook.pages}</Table.Cell>
               </Table.Row>
             </Table.Body>
           </Table.Root>
         </Inset>
 
-        <ButtonGroup>
+        <Flex gap="3" justify="end">
           <Dialog.Close>
             <Button variant="soft" color="gray">
               Fechar
             </Button>
           </Dialog.Close>
-        </ButtonGroup>
-      </StyledDialogContent>
+        </Flex>
+      </Dialog.Content>
     </Dialog.Root>
   );
 }

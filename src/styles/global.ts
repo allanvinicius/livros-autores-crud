@@ -6,17 +6,16 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
     font-size: 16px;
-  }
-
-  body {
     font-family: "Inter", sans-serif;
   }
   
   button {
-    cursor: pointer;
+    cursor: pointer !important;
   }
 
-  table, th, td {
+  table {
     border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
   }
 `;
