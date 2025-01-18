@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
 import { useLibrary } from "../../hooks/useLibrary";
+import { ButtonAdd } from "./styles";
 
 const validationSchema = Yup.object({
   name: Yup.string().required("O nome do livro é obrigatório"),
@@ -26,16 +27,14 @@ export function BookAdd() {
   });
 
   function onSubmit(data: { name: string; author: string; pages: number }) {
-    addBook(data.name, data.author, Number(data.pages));
+    addBook(data.name, data.author, data.pages);
     reset();
   }
 
   return (
     <Dialog.Root>
       <Dialog.Trigger>
-        <Button mt="3" color="gray">
-          Adicionar Livro
-        </Button>
+        <ButtonAdd>Adicionar Livro</ButtonAdd>
       </Dialog.Trigger>
 
       <Dialog.Content style={{ maxWidth: 500 }}>
@@ -48,7 +47,7 @@ export function BookAdd() {
 
           <Flex direction="column" gap="3">
             <label>
-              <Text as="div" size="2" mb="1" weight="bold">
+              <Text size="2" mb="1" weight="bold">
                 Nome
               </Text>
 
@@ -61,7 +60,7 @@ export function BookAdd() {
             </label>
 
             <label>
-              <Text as="div" size="2" mb="1" weight="bold">
+              <Text size="2" mb="1" weight="bold">
                 Autor
               </Text>
 
@@ -76,7 +75,7 @@ export function BookAdd() {
             </label>
 
             <label>
-              <Text as="div" size="2" mb="1" weight="bold">
+              <Text size="2" mb="1" weight="bold">
                 Páginas
               </Text>
 

@@ -1,5 +1,5 @@
-import { LibraryProvider } from "./context/LibraryProvider";
-import { Home } from "./pages/Home";
+import { LibraryProvider } from "./context/libraryProvider";
+import { Home } from "./pages/home";
 
 export function App() {
   return (

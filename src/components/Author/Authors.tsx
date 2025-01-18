@@ -1,6 +1,6 @@
-import { AuthorDetail } from "./AuthorDetail";
-import { AuthorDelete } from "./AuthorDelete";
-import { AuthorAdd } from "./AuthorAdd";
+import { AuthorDetail } from "./authorDetail";
+import { AuthorDelete } from "./authorDelete";
+import { AuthorAdd } from "./authorAdd";
 import {
   Table,
   TableBody,
@@ -9,8 +9,8 @@ import {
   TableHeadCell,
   TableRow,
 } from "../../styles/tables";
-import { GroupButton } from "./styles";
 import { useLibrary } from "../../hooks/useLibrary";
+import { GroupButton } from "./styles";
 
 export function Authors() {
   const { authors } = useLibrary();
@@ -34,7 +34,7 @@ export function Authors() {
                 <TableCell>{author.id}</TableCell>
                 <TableCell>{author.name}</TableCell>
                 <TableCell>{author.email}</TableCell>
-                
+
                 <TableCell>
                   <GroupButton>
                     <AuthorDelete id={author.id} />

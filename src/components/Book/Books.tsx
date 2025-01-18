@@ -1,9 +1,9 @@
-import { BookDelete } from "./BookDelete";
-import { BookDetail } from "./BookDetail";
-import { BookAdd } from "./BookAdd";
+import { BookDelete } from "./bookDelete";
+import { BookDetail } from "./bookDetail";
+import { BookAdd } from "./bookAdd";
 import { Table, TableBody, TableCell, TableHead, TableHeadCell, TableRow } from "../../styles/tables";
-import { GroupButton } from "./styles";
 import { useLibrary } from "../../hooks/useLibrary";
+import { GroupButton } from "./styles";
 
 export function Books() {
   const { books } = useLibrary();

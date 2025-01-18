@@ -1,5 +1,6 @@
 import { useContext } from "react";
-import { LibraryContext } from "../context/LibraryContext";
+import { LibraryContext } from "../context/libraryContext";
+
 
 export function useLibrary() {
   const context = useContext(LibraryContext);

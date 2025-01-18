@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Table = styled.div`
   border: 1px solid rgb(217, 217, 217);
   border-radius: 12px;
-  overflow: visible;
+  overflow: hidden;
 `;
 
 export const TableHead = styled.thead`

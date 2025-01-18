@@ -1,6 +1,6 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { App } from "./App";
+import { App } from "./app";
 import "@radix-ui/themes/styles.css";
 import { GlobalStyle } from "./styles/global";
 import { Theme } from "@radix-ui/themes";

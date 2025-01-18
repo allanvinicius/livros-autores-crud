@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Author, Book } from "../types/types";
-import { LibraryContext } from "./LibraryContext";
+import { LibraryContext } from "./libraryContext";
 
 export function LibraryProvider({ children }: { children: React.ReactNode }) {
   const [authors, setAuthors] = useState<Author[]>(() =>
@@ -29,7 +29,7 @@ export function LibraryProvider({ children }: { children: React.ReactNode }) {
     }
 
     const nextId = Math.max(...authors.map((item) => item.id), 0) + 1;
-    
+
     setAuthors([...authors, { id: nextId, name, email }]);
   }
 
