@@ -1,6 +1,6 @@
-import { AuthorDetail } from "./authorDetail";
-import { AuthorDelete } from "./authorDelete";
-import { AuthorAdd } from "./authorAdd";
+import { AuthorDetail } from "./AuthorDetail";
+import { AuthorDelete } from "./AuthorDelete";
+import { AuthorAdd } from "./AuthorAdd";
 import {
   Table,
   TableBody,

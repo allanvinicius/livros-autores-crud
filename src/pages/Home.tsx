@@ -1,5 +1,5 @@
-import { Books } from "../components/book/books";
-import { Authors } from "../components/author/authors";
+import { Books } from "../components/Book/Books";
+import { Authors } from "../components/Author/Authors";
 import { Tables, Box, Container, ContentTables } from "./styles";
 
 export function Home() {

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Author, Book } from "../types/types";
-import { LibraryContext } from "./libraryContext";
+import { LibraryContext } from "./LibraryContext";
 
 export function LibraryProvider({ children }: { children: React.ReactNode }) {
   const [authors, setAuthors] = useState<Author[]>(() =>

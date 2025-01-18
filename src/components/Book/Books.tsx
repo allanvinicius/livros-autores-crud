@@ -1,6 +1,6 @@
-import { BookDelete } from "./bookDelete";
-import { BookDetail } from "./bookDetail";
-import { BookAdd } from "./bookAdd";
+import { BookDelete } from "./BookDelete";
+import { BookDetail } from "./BookDetail";
+import { BookAdd } from "./BookAdd";
 import { Table, TableBody, TableCell, TableHead, TableHeadCell, TableRow } from "../../styles/tables";
 import { useLibrary } from "../../hooks/useLibrary";
 import { GroupButton } from "./styles";
